@@ -1,7 +1,7 @@
-import { getRequests } from "./dataAccess.js"
+import { getRequests, saveCompletion } from "./dataAccess.js"
 import { deleteRequest } from "./dataAccess.js"
-import { fetchPlumbers } from "./dataAccess.js"
-let plumbers = fetchPlumbers()
+import { getPlumbers } from "./dataAccess.js"
+
 const mainContainer = document.querySelector("#container")
 
 
@@ -17,6 +17,7 @@ const mainContainer = document.querySelector("#container")
 // }
 export const Requests = () => {
     const requests = getRequests()
+    const plumbers = getPlumbers()
     let html = ""
     
     const listItems = requests.map(
@@ -28,7 +29,7 @@ export const Requests = () => {
                                     <option value="">Choose</option>
                                     ${
                                         plumbers.map(
-                                            plumber => {
+                                            (plumber) => {
                                                 return `<option value="${request.id}--${plumber.id}">${plumber.name}</option>`
                                             }
                                         ).join("")
@@ -68,8 +69,8 @@ mainContainer.addEventListener(
                    2. plumberId
                    3. date_created
             */
-            const completion = { }
-
+            const completion = { requestId: parseInt(requestId), plumberId: parseInt(plumberId), date_created: Date.now() }
+            saveCompletion(completion)
             /*
                 Invoke the function that performs the POST request
                 to the `completions` resource for your API. Send the
