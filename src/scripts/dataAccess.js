@@ -44,3 +44,12 @@ export const deleteRequest = (id) => {
             }
         )
 }
+export const fetchPlumbers = () => {
+    return fetch(`${API}/plumbers`)
+        .then(response => response.json())
+        .then(
+            (data) => {
+                applicationState.plumbers = data
+            }
+        )
+}
