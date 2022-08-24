@@ -1,14 +1,29 @@
 {
-  "plumbers": [],
-  "completions": [],
-  "requests": [
+  "plumbers": [
+    {
+      "id": 1,
+      "name": "Merlin"
+    },
     {
       "id": 2,
-      "description": "I made a uh-oh and my pipes is clogged!",
-      "address": "4421 Alabama Avenue",
-      "budget": 300,
-      "neededBy": "2021-08-24"
+      "name": "Maude"
+    }
+  ],
+  "completions": [
+    {
+      "requestId": "5",
+      "plumberId": "2",
+      "date_created": 1661373463826,
+      "id": 1
     },
+    {
+      "requestId": 6,
+      "plumberId": 1,
+      "date_created": 1661374051943,
+      "id": 2
+    }
+  ],
+  "requests": [
     {
       "description": "mah terlet blowed ump",
       "address": "666 hickhole holler",
@@ -31,10 +46,10 @@
       "id": 5
     },
     {
-      "description": "I was bathing my child in the sink and now he's gone! I think I can hear him!",
-      "address": "856 Wolfswail Road",
-      "budget": "500",
-      "neededBy": "2022-08-27",
+      "description": "Baby Daffy went down the hole",
+      "address": "Warner Brothers Lot 33",
+      "budget": 200,
+      "neededBy": "2022-08-25",
       "id": 6
     }
   ]
